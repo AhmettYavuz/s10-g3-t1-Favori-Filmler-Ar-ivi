@@ -1,0 +1,1 @@
+export const myStore = {}; //kendi storeunuzu create ediniz
