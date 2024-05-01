@@ -1,7 +1,9 @@
-import { movies } from './../data.js';
+/* eslint-disable react/prop-types */
 
-export default function Movie(props) {
-  const movie = movies[props.sira];
+import { useSelector } from "react-redux";
+
+export default function Movie() {
+  const movie = useSelector((store) => store.movies[store.sira]);
 
   return (
     <div className="flex bg-white shadow-lg items-start">
@@ -13,7 +15,7 @@ export default function Movie(props) {
       <div className="p-8 flex flex-col gap-4 text-sm">
         <div>
           <h2 className="text-2xl">{movie.title}</h2>
-          <p className="italic text-sm">{movie.genres.join(', ')}</p>
+          <p className="italic text-sm">{movie.genres.join(", ")}</p>
         </div>
         <p className="">{movie.plot}</p>
         <div className="flex flex-col sm:flex-row">
